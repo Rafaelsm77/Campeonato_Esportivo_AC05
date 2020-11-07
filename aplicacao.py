@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template, url_for, redirect
 
+
 fut = Flask(__name__)
 #Criando as Rotas
 @fut.route("/teste")
