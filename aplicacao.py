@@ -18,9 +18,9 @@ def index():
 def serie_a():
     return render_template("serie_a.html")
 
-@fut.route("/serie_b")
-def serie_b():
-    return render_template("serie_b.html")
+@fut.route("/pontuacao")
+def pontuacao():
+    return render_template("pontuacao.html")
 
 @fut.route("/administrador")
 def adm():
