@@ -1,3 +1,10 @@
-.body{
-    background-color: burlywood;     
-}  
+body{
+    background-image: url("/static/images/outros/news-football-bg.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+img {display:block;
+    margin-left: auto;
+    margin-right: auto;
+}

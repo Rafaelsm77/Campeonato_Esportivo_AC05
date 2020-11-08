@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import render_template, url_for, redirect
+from flask import render_template
 
 
 
