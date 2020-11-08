@@ -22,6 +22,10 @@ def serie_a():
 def serie_b():
     return render_template("serie_b.html")
 
+@fut.route("/administrador")
+def adm():
+    return render_template("administrador.html")
+
 if __name__ =="__main__":
     fut.run(debug=True)
 
