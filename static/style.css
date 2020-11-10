@@ -4,7 +4,7 @@ body{
 }
 h1.t1{
     text-align: center;
-    color: darkgoldenrod;
+    color: rgb(0, 0, 0);
     font-family: Georgia, 'Times New Roman', Times, serif;
     
 }
@@ -13,6 +13,8 @@ h3.t3{
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 img.index{
+   
+    left: 90px;
 
 }
  
