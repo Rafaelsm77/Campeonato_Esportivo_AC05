@@ -58,8 +58,12 @@ def pontuacao():
     return render_template("pontuacao.html")
 
 @fut.route("/mensagem")
-def mensagem:
+def mensagem():
     return render_template("mensagem.html")
+
+@fut.route("/cadastrar")
+def cadastro():
+    return render_template("cadastro.html")
 
 @fut.route("/cadastrar", methods=['GET','POST'])
 def cadastrar():
@@ -77,7 +81,7 @@ def cadastrar():
             f = brasileirao(time, ponto, jogos, vitorias, empates,
             derrotas, gols_pro, gols_contra, saldo_gols)
             db.session.add(f)
-            db.
+            db.session.commit()
     return redirect(url_for("mensagem"))
 
 
