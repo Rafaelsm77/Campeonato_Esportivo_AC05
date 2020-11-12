@@ -3,6 +3,8 @@ from flask import render_template
 
 
 
+
+
 fut = Flask(__name__)
 #Criando as Rotas
 @fut.route("/teste")
