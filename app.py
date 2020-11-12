@@ -57,9 +57,28 @@ def serie_a():
 def pontuacao():
     return render_template("pontuacao.html")
 
+@fut.route("/mensagem")
+def mensagem:
+    return render_template("mensagem.html")
+
 @fut.route("/cadastrar", methods=['GET','POST'])
 def cadastrar():
-    return render_template("cadastro.html")
+    if request.method=="POST":
+        time=(request.form.get("time"))
+        ponto=(request.form.get("ponto"))
+        jogos=(request.form.get("jogos"))
+        vitorias=(request.form.get("vitorias"))
+        empates=(request.form.get("empates"))
+        derrotas=(request.form.get("derrotas"))
+        gols_pro=(request.form.get("gols_pro"))
+        gols_contra=(request.form.get("gols_contra"))
+        saldo_gols=(request.form.get("saldo_gols"))
+        if time:
+            f = brasileirao(time, ponto, jogos, vitorias, empates,
+            derrotas, gols_pro, gols_contra, saldo_gols)
+            db.session.add(f)
+            db.
+    return redirect(url_for("mensagem"))
 
 
 
