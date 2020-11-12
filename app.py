@@ -84,9 +84,9 @@ def cadastrar():
             db.session.commit()
     return redirect(url_for("mensagem"))
 
- @fut.route("/consultar")
-def consultar():
-    return render_template("consulta.html")
+# @fut.route("/consultar")
+#def consultar():
+ #   return render_template("consulta.html")
 
 @fut.route("/listar")
 def listar():
@@ -101,7 +101,7 @@ def listar():
     brasileirao.gols_contra
     brasileirao.saldo_gols
 
-
+    return render_template("index.html")
 
  
 
