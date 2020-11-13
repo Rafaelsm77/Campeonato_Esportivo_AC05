@@ -9,6 +9,27 @@
     </head>
     <body>
         <!--Aqui vamos inserir os dados e se conectar com o banco de dados-->
+        <h1>Cadastrar</h1>
+    <form action="cadastrar" method="POST">
+        <label>TIME:</label>
+        <input type="text" name="time" maxlength="50"/><br/>
+        <label>PONTO:</label>
+        <input type="text" name="ponto" maxlength="06"/><br/>
+        <label>JOGOS:</label>
+        <input type="text" name="jogos" maxlength="06"/><br/>
+        <label>VITORIAS:</label>
+        <input type="text" name="vitorias" maxlength="06"/><br/>
+        <label>EMPATES:</label>
+        <input type="text" name="empates" maxlength="06"/><br/>
+        <label>DERROTAS:</label>
+        <input type="text" name="derrotas" maxlength="06"/><br/>
+        <label>GOLS PRO:</label>
+        <input type="text" name="gols_pro" maxlength="06"/><br/>
+        <label>GOLS CONTRA:</label>
+        <input type="text" name="gols_contra" maxlength="06"/><br/>
+        <label>SALDO DE GOLS:</label>
+        <input type="text" name="saldo_gols" maxlength="06"/><br/>
+        <input type="submit" value="Salvar"/>
         <tr>
             <td><h3 class="sub_titulo"><a href="index">Pagina Principal</a></p></h3></td>
             <td><h3 class="sub_titulo"><a href="serie_a">Serie A</a></p></h3></td>
