@@ -15,7 +15,7 @@ db = SQLAlchemy(fut)
 class brasileirao(db.Model):
     __tablename__ = 'time'
     id_ = db.Column(db.Integer,primary_key=True,autoincrement=True)
-    time = db.Column(db.String(50))
+    nome = db.Column(db.String(50))
     ponto = db.Column(db.Integer,nullable=True)
     jogos = db.Column(db.Integer,nullable=True)
     vitorias = db.Column(db.Integer,nullable=True)
@@ -24,9 +24,9 @@ class brasileirao(db.Model):
     gols_pro = db.Column(db.Integer,nullable=True)
     gols_contra = db.Column(db.Integer,nullable=True)
     saldo_gols = db.Column(db.Integer,nullable=True)
-    def __init__(self, time, ponto, jogos, vitorias, empates,
+    def __init__(self, nome, ponto, jogos, vitorias, empates,
     derrotas, gols_pro, gols_contra, saldo_gols):
-        self.time = time
+        self.nome = nome
         self.ponto = ponto
         self.jogos = jogos
         self.vitorias = vitorias
@@ -68,7 +68,7 @@ def cadastro():
 @fut.route("/cadastrar", methods=['GET','POST'])
 def cadastrar():
     if request.method=="POST":
-        time=(request.form.get("time"))
+        nome=(request.form.get("nome"))
         ponto=(request.form.get("ponto"))
         jogos=(request.form.get("jogos"))
         vitorias=(request.form.get("vitorias"))
@@ -77,32 +77,33 @@ def cadastrar():
         gols_pro=(request.form.get("gols_pro"))
         gols_contra=(request.form.get("gols_contra"))
         saldo_gols=(request.form.get("saldo_gols"))
-        if time:
-            f = brasileirao(time, ponto, jogos, vitorias, empates,
+        if nome:
+            f = brasileirao(nome, ponto, jogos, vitorias, empates,
             derrotas, gols_pro, gols_contra, saldo_gols)
             db.session.add(f)
             db.session.commit()
     return redirect(url_for("mensagem"))
 
-@fut.route("/consultar")
+@fut.route("/consultar",methods=['GET','POST'])
 def consultar():
-   return render_template("consulta.html")
+    return render_template("consulta.html")
 
 @fut.route("/listar")
 def listar():
-    f = brasileirao.query.filter_by("consulta.html",name="time").first()
-    brasileirao.id
-    brasileirao.time
-    brasileirao.ponto
-    brasileirao.jogos
-    brasileirao.vitorias
-    brasileirao.empates
-    brasileirao.derrotas
-    brasileirao.gols_pro
-    brasileirao.gols_contra
-    brasileirao.saldo_gols
+     
+    cons = brasileirao.query.filter_by((request.form.get("nome"))).first()
+    cons.id_
+    cons.nome
+    cons.ponto
+    cons.jogos
+    cons.vitorias
+    cons.empates
+    cons.derrotas
+    cons.gols_pro
+    cons.gols_contra
+    cons.saldo_gols
 
-    return render_template("consulta.html",brasileirao=f)
+    return render_template("consulta.html",time=cons)
 
  
 
