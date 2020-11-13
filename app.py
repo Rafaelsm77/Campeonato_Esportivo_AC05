@@ -84,16 +84,17 @@ def cadastrar():
             db.session.commit()
     return redirect(url_for("mensagem"))
 
-# @fut.route("/consultar")
-#def consultar():
- #   return render_template("consulta.html")
+@fut.route("/consultar")
+def consultar():
+   return render_template("consulta.html")
 
 @fut.route("/listar")
 def listar():
-    brasileirao = brasileirao.query.filter_by().first()
+    f = brasileirao.query.filter_by("consulta.html",name="time").first()
     brasileirao.id
     brasileirao.time
     brasileirao.ponto
+    brasileirao.jogos
     brasileirao.vitorias
     brasileirao.empates
     brasileirao.derrotas
@@ -101,7 +102,7 @@ def listar():
     brasileirao.gols_contra
     brasileirao.saldo_gols
 
-    return render_template("index.html")
+    return render_template("consulta.html",brasileirao=f)
 
  
 
