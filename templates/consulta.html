@@ -5,6 +5,37 @@
     <title>Consulta</title>
 </head>
 <body>
+    <form action="cadastrar" method="POST">
+        <label>TIME:</label>
+        <input type="text" name="time" maxlength="50"/><br/>
+        <input type="submit" value="Consultar"/><br/>
+        <table class="tabela"  border ="1">
+            
+            <tr>
+                <th>ID</th>
+                <th>TIME</th>
+                <th>P</th>
+                <th>J</th>
+                <th>V</th>
+                <th>E</th>
+                <th>D</th>
+                <th>GP</th>
+                <th>GC</th>
+                <th>SG</th>
+            </tr>
+            <tr>
+                <th>{{brasileirao.id}}</th>
+                <th>{{brasileirao.time}}</th>
+                <th>{{brasileirao.ponto}}</th>
+                <th>{{brasileirao.jogos}}</th>
+                <th>{{brasileirao.vitorias}}</th>
+                <th>{{brasileirao.empates}}</th>
+                <th>{{brasileirao.derrotas}}</th>
+                <th>{{brasileirao.gols_pro}}</th>
+                <th>{{brasileirao.gols_contra}}</th>
+                <th>{{brasileirao.saldo_gols}}</th>
+            </tr>
+        </table>
     
 </body>
 </html>
