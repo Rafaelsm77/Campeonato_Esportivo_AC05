@@ -5,9 +5,10 @@
     <title>Consulta</title>
 </head>
 <body>
-    <form action="cadastrar" method="POST">
+    <form action="listar" onsubmit="return listar()">
+   
         <label>TIME:</label>
-        <input type="text" name="time" maxlength="50"/><br/>
+        <input type="text" name="nome" maxlength="50"/><br/>
         <input type="submit" value="Consultar"/><br/>
         <table class="tabela"  border ="1">
             
@@ -24,18 +25,19 @@
                 <th>SG</th>
             </tr>
             <tr>
-                <th>{{brasileirao.id}}</th>
-                <th>{{brasileirao.time}}</th>
-                <th>{{brasileirao.ponto}}</th>
-                <th>{{brasileirao.jogos}}</th>
-                <th>{{brasileirao.vitorias}}</th>
-                <th>{{brasileirao.empates}}</th>
-                <th>{{brasileirao.derrotas}}</th>
-                <th>{{brasileirao.gols_pro}}</th>
-                <th>{{brasileirao.gols_contra}}</th>
-                <th>{{brasileirao.saldo_gols}}</th>
+                <th>{{id_}}</th>
+                <th>{{time}}</th>
+                <th>{{ponto}}</th>
+                <th>{{jogos}}</th>
+                <th>{{vitorias}}</th>
+                <th>{{empates}}</th>
+                <th>{{derrotas}}</th>
+                <th>{{gols_pro}}</th>
+                <th>{{gols_contra}}</th>
+                <th>{{saldo_gols}}</th>
             </tr>
         </table>
+    </form>
     
 </body>
 </html>
