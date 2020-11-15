@@ -84,26 +84,30 @@ def cadastrar():
             db.session.commit()
     return redirect(url_for("mensagem"))
 
-@fut.route("/consultar",methods=['GET','POST'])
-def consultar():
+@fut.route("/listar",methods=['GET','POST'])
+def listar():
     return render_template("consulta.html")
 
-@fut.route("/listar")
-def listar():
-     
-    cons = brasileirao.query.filter_by((request.form.get("nome"))).first()
-    cons.id_
-    cons.nome
-    cons.ponto
-    cons.jogos
-    cons.vitorias
-    cons.empates
-    cons.derrotas
-    cons.gols_pro
-    cons.gols_contra
-    cons.saldo_gols
+@fut.route("/consultar",methods=['GET','POST'])
+def consultar():
+    if request.method=="POST":
+        nome=(request.form.get("nome"))
 
-    return render_template("consulta.html",time=cons)
+        cons = brasileirao.query.filter_by(cons=nome).first()
+        cons.id_
+        cons.nome
+        cons.ponto
+        cons.jogos
+        cons.vitorias
+        cons.empates
+        cons.derrotas
+        cons.gols_pro
+        cons.gols_contra
+        cons.saldo_gols
+        
+
+
+    return render_template("consulta.html",cons=brasileirao)
 
  
 
